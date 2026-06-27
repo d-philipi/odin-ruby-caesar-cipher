@@ -20,10 +20,10 @@ RSpec.describe 'Caesar Cipher Exercise' do
       expect(caesar_cipher('hello', -3)).to eq('ebiil')
     end
     xit 'returns a string wxith each letter shifted by -5' do
-      expect(caesar_cipher('hello', -5)).to eq('cnggj')
+      expect(caesar_cipher('hello', -5)).to eq('czggj')
     end
     xit 'returns a string wxith each letter shifted by -7' do
-      expect(caesar_cipher('hello', -7)).to eq('axxxw')
+      expect(caesar_cipher('hello', -7)).to eq('axeeh')
     end
   end
 
@@ -31,8 +31,11 @@ RSpec.describe 'Caesar Cipher Exercise' do
     xit 'returns a warning message when the shift value is a string' do
       expect(caesar_cipher('hello', 'abc')).to eq('Warning: Shift value must be an integer')
     end
-    xit 'returns a string with each letter shifted by a number in string format' do
-      expect(caesar_cipher('hello', '123')).to eq('okqqr')
+    xit 'returns a string with each letter shifted by a negative number in string format' do
+      expect(caesar_cipher('hello', '-123')).to eq('olssv')
+    end
+    xit 'returns a string with each letter shifted by a positive number in string format' do
+      expect(caesar_cipher('hello', '123')).to eq('axeeh')
     end
   end
 end
